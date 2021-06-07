@@ -2,18 +2,17 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from ageClassification import checker
 from ast import literal_eval
 from fuzzywuzzy import process
 import omdb
 
-omdb.set_default('apikey', 'a3e014fb')
+omdb.set_default('apikey', 'APIKEY')
 omdbRes=omdb.search('True Grit')[0].get('poster')
 
 def getPoster(title):
     try:
-        #return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
-        return omdb.search(title)[0].get('poster')
+        return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
+        #return omdb.search(title)[0].get('poster')
     except:
         return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 
@@ -119,11 +118,6 @@ def fuzzySearch(title, items = 10):
 #print(fuzzySearch("ironman"))
 
 
-
-
-
-
-
 def recommendations(movieTitle, boolean = False):
     features = ['keywords','cast','genres','director', 'crew']
     result = []
@@ -171,4 +165,4 @@ def recommendations(movieTitle, boolean = False):
 
 
 
-print(recommendations("Iron Man"))
+#print(recommendations("Iron Man"))
