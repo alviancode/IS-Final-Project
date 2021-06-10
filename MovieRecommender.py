@@ -3,16 +3,16 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from ast import literal_eval
-from fuzzywuzzy import process
+#from fuzzywuzzy import process
 import omdb
 
-omdb.set_default('apikey', 'APIKEY')
+omdb.set_default('apikey', 'API KEY')
 omdbRes=omdb.search('True Grit')[0].get('poster')
 
 def getPoster(title):
     try:
-        return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
-        #return omdb.search(title)[0].get('poster')
+        #return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
+        return omdb.search(title)[0].get('poster')
     except:
         return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 
