@@ -6,7 +6,7 @@ A movie recommendation system using content based recommendation for Intelligent
 - Andreas Sukardi Teja
 - Davin Pratama Chandra
 
-![](https://github.com/alviancode/IS-Final-Project/blob/master/preview/preview.png?raw=true)
+![](https://github.com/alviancode/IS-Final-Project/blob/main/preview/preview.png?raw=true)
 
 ## Implementation
 We choose to create a content based recommendation based on movie keywords, cast, genres, and director.
