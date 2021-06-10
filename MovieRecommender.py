@@ -6,7 +6,7 @@ from ast import literal_eval
 #from fuzzywuzzy import process
 import omdb
 
-omdb.set_default('apikey', 'API KEY')
+#omdb.set_default('apikey', 'API KEY')
 omdbRes=omdb.search('True Grit')[0].get('poster')
 
 def getPoster(title):

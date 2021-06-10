@@ -26,6 +26,7 @@ For backend, you have to install `sklearn` and `flask` using `pip`. To get the m
 ```
 omdb.set_default('apikey', 'API KEY')
 ```
+To run the backend, you can run it from `rest-api.py`. The default PORT is `5000`. To check it you can open your internet browser and go to `localhost:5000`.
 
 ### Frontend
 For frontend make sure you installed `Node.js`. You can download it from [Node.js](https://nodejs.org/en/download/) and install it according to your platform.
