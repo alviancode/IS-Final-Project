@@ -22,7 +22,10 @@ The dataset we use is from [Code Heroku](https://www.youtube.com/watch?v=3ecNC-S
 
 ## Installation
 ### Backend
-For backend, you have to install `sklearn` and `flask` using `pip`.
+For backend, you have to install `sklearn` and `flask` using `pip`. To get the mvovie poster, you have chnage `API KEY` for OMDB API. You can go to `MovieRecommender.py` and change `API KEY` tirh your OMDB API key.
+```
+omdb.set_default('apikey', 'API KEY')
+```
 
 ### Frontend
 For frontend make sure you installed `Node.js`. You can download it from [Node.js](https://nodejs.org/en/download/) and install it according to your platform.
