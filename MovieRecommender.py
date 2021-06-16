@@ -9,7 +9,7 @@ import omdb
 movies = pd.read_csv("movie_dataset.csv")
 
 # OMDB API
-omdb.set_default('apikey', 'API KEY')
+omdb.set_default('apikey', 'a3e014fb')
 omdbRes=omdb.search('True Grit')[0].get('poster')
 
 # Function to return movie's poster from IMDB using OMDB API.
@@ -103,7 +103,25 @@ def levenshteinDistance(a:str,b:str) -> int:
     
     lenA = len(a)
     lenB = len(b)
-    d = [[0 for i in range(lenB+1)] for k in range(lenA+1)]
+    d = np.zeros((lenA+1, lenB+1), dtype=int)
+    
+    # Transforming source prefixes  into empty string
+    # by dropping all characters.
+    for i in range(lenA+1):
+        d[i, 0] = i
+    
+    # Reaching the target prefixes from source prefix
+    # by inserting each characters.
+    for j in range(lenB+1):
+        d[0, j] = j
+    
+    
+    for i in range(1,lenA+1):
+        for m in range(1,lenB+1):
+            if a[i-1] == b[m-1]:
+                cost = 0
+            else:
+                cost = 1
         
     for i in range(1,lenA+1):
         for m in range(1,lenB+1):
@@ -112,9 +130,9 @@ def levenshteinDistance(a:str,b:str) -> int:
             else:
                 cost = 1
 
-            d[i][m] = min(d[i-1][m] + 1 ,     # deletion.
-                                d[i][m-1] + 1 ,    # insertion.
-                                d[i-1][m-1] + cost    # substitution.
+            d[i, m] = min(d[i-1, m] + 1 ,     # deletion.
+                                d[i, m-1] + 1 ,    # insertion.
+                                d[i-1, m-1] + cost    # substitution.
                                 )
     return d[lenA][lenB]
 
