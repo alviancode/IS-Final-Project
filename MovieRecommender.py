@@ -9,7 +9,7 @@ import omdb
 movies = pd.read_csv("movie_dataset.csv")
 
 # OMDB API
-omdb.set_default('apikey', 'a3e014fb')
+omdb.set_default('apikey', 'API KEY')
 omdbRes=omdb.search('True Grit')[0].get('poster')
 
 # Function to return movie's poster from IMDB using OMDB API.
@@ -117,7 +117,6 @@ def levenshteinDistance(a:str,b:str) -> int:
                                 d[i-1][m-1] + cost    # substitution.
                                 )
     return d[lenA][lenB]
-
 
 
 
