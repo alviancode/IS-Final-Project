@@ -15,8 +15,8 @@ omdbRes=omdb.search('True Grit')[0].get('poster')
 # Function to return movie's poster from IMDB using OMDB API.
 def getPoster(title):
     try:
-        return ''
-        #return omdb.search(title)[0].get('poster')
+        #return ''
+        return omdb.search(title)[0].get('poster')
     except:
         return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 
@@ -43,7 +43,7 @@ def combineFeatures(row):
 		print ("Error:", row)	
 
 # Function that recommend the movie.
-def recommendations(movieTitle, boolean = False):
+def recommendations(movieTitle):
     features = ['keywords','cast','genres','director', 'crew']
     result = []
     
@@ -82,7 +82,7 @@ def recommendations(movieTitle, boolean = False):
             "poster" : getPoster(getTitleFromIndex(element[0]))
                        })
         i=i+1
-        if i>30:
+        if i>20:
             return result
         
     

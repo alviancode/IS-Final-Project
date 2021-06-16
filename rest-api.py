@@ -17,7 +17,7 @@ def hello():
 @app.route("/search/<string:title>", methods=['GET'])
 @cross_origin()
 def getTitle(title):
-    return jsonify({"movies":mr.fuzzySearch(title, 20)}), 200
+    return jsonify({"movies":mr.fuzzySearch(title, 15)}), 200
 
 
 @app.route("/allbest", methods=["GET"])
