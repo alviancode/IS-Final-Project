@@ -22,7 +22,7 @@ The dataset we use is from [Code Heroku](https://www.youtube.com/watch?v=3ecNC-S
 
 ## Installation
 ### Backend
-For backend, you have to install `sklearn` and `flask` using `pip`. To get the movie poster, you have change `API KEY` for OMDB API. You can go to `MovieRecommender.py` and change `API KEY` tirh your OMDB API key.
+For backend, you have to install `sklearn` and `flask` using `pip`. To get the movie poster, you have change `API KEY` for OMDB API. You can go to `MovieRecommender.py` and change `API KEY` with your OMDB API key.
 ```
 omdb.set_default('apikey', 'API KEY')
 ```
