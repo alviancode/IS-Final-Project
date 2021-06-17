@@ -9,7 +9,7 @@ import omdb
 movies = pd.read_csv("movie_dataset.csv")
 
 # OMDB API
-omdb.set_default('apikey', 'API KEY')
+omdb.set_default('apikey', 'a3e014fb')
 omdbRes=omdb.search('True Grit')[0].get('poster')
 
 # Function to return movie's poster from IMDB using OMDB API.
@@ -115,13 +115,6 @@ def levenshteinDistance(a:str,b:str) -> int:
     for j in range(lenB+1):
         d[0, j] = j
     
-    
-    for i in range(1,lenA+1):
-        for m in range(1,lenB+1):
-            if a[i-1] == b[m-1]:
-                cost = 0
-            else:
-                cost = 1
         
     for i in range(1,lenA+1):
         for m in range(1,lenB+1):
@@ -140,7 +133,6 @@ def levenshteinDistance(a:str,b:str) -> int:
 
 # Function that return the best rating movies.
 def bestMovies(items = 20):
-    #print(movieSort[['title', 'index', "vote_average"]])
     array = []
     C = movies["vote_average"].mean()
     m = movies['vote_count'].quantile(0.90)
@@ -180,7 +172,3 @@ def fuzzySearch(title, items = 10):
                      "poster":getPoster(getTitleFromIndex(sorted(index)[i][1]))
                      })
     return temp
-
-
-
-print(fuzzySearch("Iron Man"))
